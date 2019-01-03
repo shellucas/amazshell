@@ -2,3 +2,4 @@ venv
 .idea/
 *.pyo
 *.pyc
+db.sqlite3

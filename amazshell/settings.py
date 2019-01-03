@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third-Party Apps
+    'bootstrap4',
 
     # Local Apps
     'shop.apps.ShopConfig',

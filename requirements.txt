@@ -1,4 +1,5 @@
 Django==2.2.dev20190102231945
+django-bootstrap4==0.0.7
 freeze==1.0.10
 Pillow==5.4.0
 pytz==2018.7
