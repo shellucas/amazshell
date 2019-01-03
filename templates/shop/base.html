@@ -17,7 +17,16 @@
    {% load staticfiles %}  <!-- Prepare django to load static files -->
 
    <!-- navigation bar header-->
-   <div class="collapse bg-dark show" id="navbarHeader" style>
+   <div class="collapse bg-dark show" id="navbarHeaderShopping" style>
+      <div class="container-fluid">
+         <div class="row justify-content-end">
+            <div class="navbar">
+               <li class="navbar-text text-white ml-auto">Shopping Cart is Empty.</li>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="collapse bg-dark" id="navbarHeaderAbout" style>
       <div class="container">
          <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
@@ -39,36 +48,53 @@
          </div>
       </div>
    </div>
-   <div class="navbar navbar-dark bg-dark shadow-sm">
-      <div class="container d-flex justify-content-between">
+   <div class="navbar sticky-top navbar-dark bg-dark shadow-sm">
+{#      <div class="container d-flex justify-content-between">#}
          <a href="#" class="navbar-brand d-flex align-items-center">
             <img src="{% static 'logo.png' %}" alt="" width="43" height="29">
             <strong>Amazhell</strong>
          </a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
-                 aria-controls="navbarHeader" aria-expanded="true" aria-label="Toggle navigation">
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeaderAbout"
+                 aria-controls="navbarHeaderAbout" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
          </button>
-      </div>
+         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarHeaderShopping"
+                 aria-controls="navbarHeaderShopping" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+{#      </div>#}
    </div>
    <!-- end nav bar header -->
-
-
 </head>
 <body>
-   <div id="header">
-      <a href="/" class="logo">Amazshell</a>
-   </div>
-   <div id="subheader">
-      <div class="cart">
-         Your cart is empty.
+   <main role="main">
+
+      <!-- Content Header -->
+      <section class="jumbotron text-center">
+         <div class="container">
+         {% block content-header %}
+            <h1 class="jumbotron-header">Amazhell Webshop</h1>
+            <p class="lead text-muted">
+               Welcome, I made this website as a side project to improve my disciplines in not only web development, but
+               also Python<small> 3.7</small>, Django<small> 2.1.4</small> and Bootstrap <small>4.2</small>. I hope
+               this experience will improve my knowledge in various fields such as MTV frameworks, python
+               web development, REST API's, database systems etc. So far it has been very successful due to my software
+               engineering background. Thanks for viewing my page.
+            <blockquote class="blockquote">
+               <footer class="blockquote-footer">
+                  This text and the whole site is an example project by <cite title="Shelby Hendrickx">Shelby Hendrickx</cite>
+               </footer>
+            </blockquote>
+            </p>
+         {% endblock content-header %}
+         </div>
+      </section> <!-- end content header -->
+
+      <div id="container">
+         {% block content %}{% endblock %}
       </div>
-   </div>
 
-   <div id="container">
-      {% block content %}{% endblock %}
-   </div>
-
+   </main>
    <!-- Javascript -->
    <!-- Jquery > Popper.js > Bootstrap JS -->
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
