@@ -14,6 +14,46 @@
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
    <title>{% block title %}Amazhell{% endblock %}</title>
+   {% load staticfiles %}  <!-- Prepare django to load static files -->
+
+   <!-- navigation bar header-->
+   <div class="collapse bg-dark show" id="navbarHeader" style>
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+               <h4 class="text-white">About</h4>
+               <p class="text-muted">
+                  This site is a project to practice web development using django, python and bootstrap. The idea is to
+                  implement as many features as possible to learn as much as possible. Thanks for  checking out my
+                  project.
+               </p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+               <h4 class="text-white">Contact</h4>
+               <ul class="list-unstyled">
+                  <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                  <li><a href="#" class="text-white">Like on Facebook</a></li>
+                  <li><a href="#" class="text-white">Email me</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container d-flex justify-content-between">
+         <a href="#" class="navbar-brand d-flex align-items-center">
+            <img src="{% static 'logo.png' %}" alt="" width="43" height="29">
+            <strong>Amazhell</strong>
+         </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                 aria-controls="navbarHeader" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+      </div>
+   </div>
+   <!-- end nav bar header -->
+
+
 </head>
 <body>
    <div id="header">
@@ -21,11 +61,11 @@
    </div>
    <div id="subheader">
       <div class="cart">
-         Your cart is empty. b
+         Your cart is empty.
       </div>
    </div>
 
-   <div id="content">
+   <div id="container">
       {% block content %}{% endblock %}
    </div>
 
