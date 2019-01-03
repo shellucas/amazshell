@@ -4,6 +4,9 @@ from shop.models import Category, Product
 
 
 # Register your models here.
+from shop.templatetags.time_extras import register
+
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug']
